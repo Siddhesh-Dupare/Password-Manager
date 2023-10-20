@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login in With Email"
+            android:textColor="@color/secondaryColor"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login with your registered email address"
+            android:textColor="@color/secondaryVariant"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"/>
+
+        <EditText
+            android:id="@+id/login_email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/rectangle_circle"
+            android:layout_marginTop="20dp"
+            android:drawableStart="@drawable/email_icon"
+            android:paddingStart="15dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/secondaryColor"
+            android:paddingEnd="20dp"
+            android:drawablePadding="20dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/login_password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/rectangle_circle"
+                android:drawableStart="@drawable/key_icon"
+                android:drawablePadding="20dp"
+                android:paddingEnd="45dp"
+                android:paddingStart="15dp"
+                android:textColor="@color/secondaryColor"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/login_forgot_password"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Forgot Password?"-->
+        <!--            android:textSize="15sp"-->
+        <!--            android:textColor="@color/primaryVariant"-->
+        <!--            android:textAlignment="viewEnd"-->
+        <!--            android:textStyle="bold"-->
+        <!--            android:layout_marginEnd="10dp"-->
+        <!--            android:layout_marginTop="5dp"/>-->
+
+        <Button
+            android:id="@+id/login_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/colorful_rectangle_circle"
+            android:layout_marginTop="50dp"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:textColor="@color/secondaryColor"/>
+
+        <ProgressBar
+            android:id="@+id/login_progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginHorizontal="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/login_signup_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Don't have an account? SignIn"
+            android:textColor="@color/secondaryColor"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
