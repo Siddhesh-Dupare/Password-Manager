@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateAccountActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textColor="@color/secondaryColor"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/create_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/rectangle_circle"
+            android:drawableStart="@drawable/title_icon"
+            android:layout_marginTop="7dp"
+            android:paddingStart="15dp"
+            android:hint="Title"
+            android:inputType="text"
+            android:textColor="@color/secondaryColor"
+            android:paddingEnd="20dp"
+            android:drawablePadding="20dp"/>
+
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Name"-->
+        <!--            android:layout_marginTop="20dp"-->
+        <!--            android:textColor="@color/secondaryColor"-->
+        <!--            android:textSize="15sp"-->
+        <!--            android:textStyle="bold"/>-->
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/create_name"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:background="@drawable/rectangle_circle"-->
+        <!--            android:drawableStart="@drawable/account_icon"-->
+        <!--            android:layout_marginTop="7dp"-->
+        <!--            android:paddingStart="15dp"-->
+        <!--            android:hint="Name"-->
+        <!--            android:inputType="text"-->
+        <!--            android:textColor="@color/secondaryColor"-->
+        <!--            android:paddingEnd="20dp"-->
+        <!--            android:drawablePadding="20dp"/>-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/secondaryColor"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/create_email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/rectangle_circle"
+            android:drawableStart="@drawable/email_icon"
+            android:paddingStart="15dp"
+            android:hint="Email"
+            android:inputType="text"
+            android:textColor="@color/secondaryColor"
+            android:paddingEnd="20dp"
+            android:drawablePadding="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/secondaryColor"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true">
+
+            <EditText
+                android:id="@+id/create_password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/rectangle_circle"
+                android:drawableStart="@drawable/key_icon"
+                android:drawablePadding="20dp"
+                android:paddingEnd="45dp"
+                android:paddingStart="15dp"
+                android:textColor="@color/secondaryColor"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/create_save"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/colorful_rectangle_circle"
+            android:layout_marginTop="50dp"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:textColor="@color/secondaryColor"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
