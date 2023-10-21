@@ -13,6 +13,7 @@
 
         <item name="android:windowBackground">@color/primaryColor</item>
         <item name="android:statusBarColor">@color/primaryColor</item>
+
     </style>
 
     <style name="Theme.PasswordManager" parent="Base.Theme.PasswordManager" />

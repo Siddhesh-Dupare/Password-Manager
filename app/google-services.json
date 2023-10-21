@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "107483046579",
+    "project_id": "password-manager-c03ba",
+    "storage_bucket": "password-manager-c03ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107483046579:android:bcda861b9a61477bccc6c6",
+        "android_client_info": {
+          "package_name": "com.oto.passwordmanager"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmgCg1khhD94QskV8qsGOu4sY6VkyujIM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
