@@ -3,11 +3,15 @@ package com.oto.passwordmanager;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,6 +27,8 @@ public class SignUpActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText fullNameTextView, emailTextView, passwordTextView, confirmPasswordTextView;
     private Button createAccountButton;
+    private ProgressBar progressBar;
+    private TextView signInActivity;
     FirebaseUser user;
     @Override
     public void onStart() {
@@ -44,10 +50,39 @@ public class SignUpActivity extends AppCompatActivity {
         passwordTextView = findViewById(R.id.signup_password);
         confirmPasswordTextView = findViewById(R.id.signup_confirm_password);
         createAccountButton = findViewById(R.id.signup_create_account);
+        progressBar = findViewById(R.id.signup_progressbar);
+        signInActivity = findViewById(R.id.signup_login_activity);
+        progressBar.setVisibility(View.GONE);
+        signInActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                finish();
+            }
+        });
         createAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                signUpAuthentication();
+                String fullName = fullNameTextView.getText().toString();
+                String email = emailTextView.getText().toString();
+                String password = passwordTextView.getText().toString();
+                String confirmPassword = confirmPasswordTextView.getText().toString();
+                if (fullName.isEmpty())
+                    fullNameTextView.setError(AndroidUtil.field);
+                else if (email.isEmpty())
+                    emailTextView.setError(AndroidUtil.field);
+                else if (password.isEmpty())
+                    passwordTextView.setError(AndroidUtil.field);
+                else if (confirmPassword.isEmpty())
+                    confirmPasswordTextView.setError(AndroidUtil.field);
+                else {
+                    if (!isConnection()) {
+                        AndroidUtil.toast(getApplicationContext(), "Please, connect to the internet");
+                    } else {
+                        progressBar.setVisibility(View.VISIBLE);
+                        signUpAuthentication();
+                    }
+                }
             }
         });
 
@@ -63,11 +98,17 @@ public class SignUpActivity extends AppCompatActivity {
                             Toast.makeText(SignUpActivity.this, "Account Created", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                             startActivity(intent);
+                            progressBar.setVisibility(View.GONE);
                             finish();
                         } else {
                             Toast.makeText(SignUpActivity.this, "Account is not created", Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.GONE);
                         }
                     }
                 });
+    }
+    private boolean isConnection() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnectedOrConnecting();
     }
 }
