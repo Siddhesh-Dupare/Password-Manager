@@ -112,7 +112,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="17sp"
-            android:text="Don't have an account? SignIn"
+            android:text="Don't have an account? Sign Up"
             android:textColor="@color/secondaryColor"/>
 
     </LinearLayout>

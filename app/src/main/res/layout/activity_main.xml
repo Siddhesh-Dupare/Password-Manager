@@ -25,18 +25,28 @@
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@+id/layout_right"
+        android:layout_above="@+id/layout2"
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <ImageButton
-        android:id="@+id/main_add_button"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/oval_background"
-        android:src="@drawable/add_icon"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="40dp"/>
+    <LinearLayout
+        android:id="@+id/layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_alignParentBottom="true">
+
+        <ImageButton
+            android:id="@+id/main_add_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/oval_background"
+            android:src="@drawable/add_icon"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="20dp"/>
+
+    </LinearLayout>
 
 </RelativeLayout>
