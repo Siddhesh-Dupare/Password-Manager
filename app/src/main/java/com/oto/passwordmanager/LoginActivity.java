@@ -11,6 +11,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -50,6 +54,9 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         signInActivity = findViewById(R.id.login_signup_activity);
         progressBar.setVisibility(View.GONE);
+        int color = getResources().getColor(R.color.primaryVariant);
+        AndroidUtil.coloringTextView(signInActivity, color, 6);
+        AndroidUtil.fieldEmptyOrNot(passwordEditText, "Password");
         OnBackPressedDispatcher dispatcher = getOnBackPressedDispatcher();
         OnBackPressedCallback callBack = new OnBackPressedCallback(true) {
             @Override
@@ -117,6 +124,13 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
     }
+//    private void coloringTextView() {
+//        String str = signInActivity.getText().toString();
+//        int color = getResources().getColor(R.color.primaryVariant);
+//        Spannable spannable = new SpannableString(str);
+//        spannable.setSpan(new ForegroundColorSpan(color), str.length() - 6, str.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+//        signInActivity.setText(spannable);
+//    }
     private boolean isConnection() {
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnectedOrConnecting();

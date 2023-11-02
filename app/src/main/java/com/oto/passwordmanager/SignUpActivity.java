@@ -57,6 +57,10 @@ public class SignUpActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.signup_progressbar);
         signInActivity = findViewById(R.id.signup_login_activity);
         progressBar.setVisibility(View.GONE);
+        int color = getResources().getColor(R.color.primaryVariant);
+        AndroidUtil.fieldEmptyOrNot(passwordTextView, "Password");
+        AndroidUtil.fieldEmptyOrNot(confirmPasswordTextView, "Confirm Password");
+        AndroidUtil.coloringTextView(signInActivity, color, 7);
         OnBackPressedDispatcher dispatcher = getOnBackPressedDispatcher();
         OnBackPressedCallback callBack = new OnBackPressedCallback(true) {
             @Override
