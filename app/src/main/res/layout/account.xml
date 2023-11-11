@@ -19,9 +19,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/layout1"
-        android:layout_marginEnd="8dp"
-        android:src="@drawable/google_icon"
-        />
+        android:layout_marginEnd="8dp" />
 
     <LinearLayout
         android:id="@+id/layout1"
