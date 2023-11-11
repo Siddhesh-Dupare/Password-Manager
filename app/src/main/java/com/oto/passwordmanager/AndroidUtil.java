@@ -61,7 +61,6 @@ public class AndroidUtil {
                 AndroidUtil.toast(context, "Biometric features are currently unavailable.");
                 break;
             case BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED:
-                // Prompts the user to create credentials that your app accepts.
                 final Intent enrollIntent = new Intent(Settings.ACTION_BIOMETRIC_ENROLL);
                 enrollIntent.putExtra(Settings.EXTRA_BIOMETRIC_AUTHENTICATORS_ALLOWED,
                         BIOMETRIC_STRONG | DEVICE_CREDENTIAL);
